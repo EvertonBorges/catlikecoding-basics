@@ -212,7 +212,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 30, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +328,7 @@ MonoBehaviour:
   pointPrefab: {fileID: 8591057128729707807, guid: 5d98c0e3e6f5038449a40529fb1cbd79,
     type: 3}
   resolution: 50
+  function: 4
 --- !u!4 &1287012236
 Transform:
   m_ObjectHideFlags: 0
