@@ -9,10 +9,26 @@ public static class FunctionLibrary
     public enum FunctionEnum { Wave, MultiWave, Ripple, Sphere, Torus };
 
     static Function[] functions = { Wave, MultiWave, Ripple, Sphere, Torus };
+    
+    public static Vector3 Morph(float u, float v, float t, Function from, Function to, float progress) 
+    {
+        return Vector3.LerpUnclamped(from(u, v, t), to(u, v, t), SmoothStep(0f, 1f, progress));
+    }
 
     public static Function GetFunction(FunctionEnum name)
     {
         return functions[(int) name];
+    }
+
+    public static FunctionEnum GetNextFunctionEnum (FunctionEnum name)
+    {
+        return ((int) name < functions.Length - 1) ? name + 1 : 0;
+    }
+
+    public static FunctionEnum GetRandomFunctionEnumOtherThan (FunctionEnum name)
+    {
+        var choice = (FunctionEnum) Random.Range(1, functions.Length);
+        return choice == name ? 0 : choice;
     }
     
     public static Vector3 Wave(float u, float v, float t)
