@@ -20,6 +20,8 @@ public static class FunctionLibrary
         return functions[(int) name];
     }
 
+    public static int FunctionCount => functions.Length;
+
     public static FunctionEnum GetNextFunctionEnum (FunctionEnum name)
     {
         return ((int) name < functions.Length - 1) ? name + 1 : 0;
